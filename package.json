@@ -1,0 +1,27 @@
+{
+  "name": "mmmog-warehouse-wars",
+  "version": "1.0.0",
+  "description": "Mobile massively multiplayer online warehouse wars game using React and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiaxinjessiewu/mmmog-warehouse-wars.git"
+  },
+  "keywords": [
+    "aa123000"
+  ],
+  "author": "jessie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiaxinjessiewu/mmmog-warehouse-wars/issues"
+  },
+  "homepage": "https://github.com/jiaxinjessiewu/mmmog-warehouse-wars#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "sqlite3": "^4.0.6"
+  }
+}

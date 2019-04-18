@@ -1,0 +1,149 @@
+body{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: #f7f7ff;
+    
+}
+label{
+    width:20 px;
+    height: 20 px;
+}
+h1{
+    color: #191966;
+}
+h2{
+    color: #232390;
+    background: #eaeafa;
+    border-radius: 5px;
+    font-size: 20px;
+}
+h3{
+    color: #232390;
+    background: #eaeafa;
+    border-radius: 5px;
+/*    font-size: 20px;*/
+}
+h4{
+    color: #232390;
+    background: #eaeafa;
+    border-radius: 5px;
+/*    font-size: 20px;*/
+}
+
+/*h5{*/
+/*    font-family: "Times New Roman", Times, serif;*/
+/*}*/
+h6{
+    color:#FF0000;
+/*    background: #eaeafa;*/
+/*    border-radius: 5px;*/
+/*    font-size: 15px;*/
+}
+h7{
+    color:#FF0000;
+    /*    background: #eaeafa;*/
+    /*    border-radius: 5px;*/
+    font-size: 13px;
+        
+}
+#messages tr td{
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+    color:red;
+    float:left;
+}
+#AllUsers tr td{
+    font-size: 13px;
+/*    font-family: "Times New Roman", Times, serif;*/
+/*    color:red;*/
+    float:left;
+}
+#wwgame { display: block;
+    width: 1200px;}
+#left, #box, #right{
+    display: inline-block;
+    vertical-align: top;
+}
+#left, #right{
+    width: 200px;
+}
+#box{
+    width: 600px;
+}
+td img {
+    height: 25px;
+    width: 25px;
+}
+#stageinit td {
+    border:1px solid black;
+}
+.button {
+    background-color: #232390;
+    text-align: center;
+    display: inline-block;
+/*    font-size: 15px;*/
+    font-size:13px;
+    margin: 5px 3px;
+}
+.buttonPlay {
+    color: black;
+    border: 2px solid  #232390;
+    background: #eaeafa;
+    border-radius: 5px;
+}
+.legend td {
+    width:50px;
+    text-align: center;
+    font-size: 13px;
+}
+.legend td img {
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    border:1px solid black;
+}
+
+.sublabel{
+    font-size: 12px;
+    color: grey;
+    font-family: "Times New Roman", Times, serif;
+}
+.score{
+    color: #902323;
+    background: #eaeafa;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+label {
+    color: #902323;
+/*    font-weight: bold;*/
+/*    display: block;*/
+/*    width: 150px;*/
+    font-size: 14px;
+}
+
+.prof{
+    font-size: 14px;
+}
+
+
+div.mode {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.mode:hover {
+    border: 1px solid #777;
+}
+
+div.mode img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 12px;
+    text-align: center;
+}
