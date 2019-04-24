@@ -5,8 +5,8 @@ app.use(express.static("static_files"));
 
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
-const url = "mongodb://chenyo21:24492@mcsdb.utm.utoronto.ca:27017/chenyo21_309";
-const dbName = "chenyo21_309";
+const url = "mongodb://localhost/mmmog";
+const dbName = "jessiewu_mmmog";
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json()); // support json encoded bodies
