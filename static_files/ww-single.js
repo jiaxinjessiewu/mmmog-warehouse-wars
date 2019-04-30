@@ -2,12 +2,11 @@
 // Note: Yet another way to declare a class, using .prototype.
 
 function Stage(width, height, stageElementID){
-    this.actors=[];// all actors on this stage (monsters, player, boxes, ...)
-    this.player=null; // a special actor, the player
+    this.actors=[];
+    this.player=null;
     this.playedTime=0;
     this.pause=false;
     this.status="";
-    // the logical width and height of the stage
     this.width=width;
     this.height=height;
     
@@ -21,7 +20,6 @@ function Stage(width, height, stageElementID){
     this.meImageSrc=document.getElementById('Me').src;
     this.boxImageSrc=document.getElementById('boxImage').src;
     this.wallImageSrc=document.getElementById('wallImage').src;
-    
     this.devilImageSrc=document.getElementById('devilImage').src;
     
 }
@@ -208,64 +206,6 @@ Player.prototype.move=function(asker,x,y){
         }
     }
 }
-
-//function Devil(stage, x, y){
-//    this.x=x;
-//    this.y=y;
-//    this.stage=stage;
-//    this.xSteps=[1,-1,1,-1];
-//    this.ySteps=[1,1,-1,-1];
-//}
-//
-//Devil.prototype.checkDeath=function(){
-//    var surrounding = 0;
-//    for(var count=0;count<this.xSteps.length;count++){
-//        var dest = this.stage.getActor(this.x + this.xSteps[count], this.y+ this.ySteps[count]);
-//        if(dest != null && !(dest instanceof Player)){
-//            surrounding +=1;
-//        }
-//    }
-//    if(surrounding==8){ return true;}
-//    else{return false;}
-//}
-//
-//Devil.prototype.step=function(){
-//    if(this.checkDeath()==true){
-//        this.stage.removeActor(this);}
-//    
-//    else{
-//        var blockElement = false;
-//        while (blockElement == false){
-//            var randMove = Math.floor(Math.random()*4);
-//            console.log("devil");
-//            var dest = this.stage.getActor(this.x + this.xSteps[randMove], this.y + this.ySteps[randMove]);
-//            if (!(dest instanceof Box || dest instanceof Wall || dest instanceof Monster || dest instanceof Devil)){
-//                this.move(this, this.xSteps[randMove], this.ySteps[randMove]);
-//                blockElement = true;
-//                
-//            }
-//        }
-//    }
-//    
-//}
-//
-//Devil.prototype.move=function(asker,x,y){
-//    if((!(asker === this))){return false;}
-//    var newx=this.x+x;
-//    var newy=this.y+y;
-//    
-//    dest = this.stage.getActor(newx,newy);
-//    if(dest == null || dest.move(this, x , y)){
-//        this.stage.removeActor(this);
-//        this.x = newx;
-//        this.y = newy;
-//        this.stage.addActor(this);
-//        this.stage.setImage(this.x, this.y, this.stage.devilImageSrc);
-//        return true;
-//    }else{
-//        return false;
-//    }
-//}
 
 function Monster(stage,x,y){
     this.x=x;
