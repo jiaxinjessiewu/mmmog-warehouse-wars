@@ -12,8 +12,173 @@
     
 	<body bgcolor="ffffff">
         
-		<div id="single-root">
+		<center>
+			<h1>Warehouse Wars</h1>
+            <div class="button" id="profile">
+                <button class="button buttonPlay" id="userProf" type="submit" onclick="return UserProfile();">User Profile</button>
+                <button class="button buttonPlay" id="scoreinfo" type="submit" onclick="return highScore();">All Scores</button>
+                <button class="button buttonPlay" id="main" type="submit" >Main Page</button>
+            </div>
+            <div id="UserProfile">
+                <h2>User Profile</h>
+                    
+                <form id = "showprof" class="prof"> </form>
+                <h2>User Scores</h>
+                <form id = "userscore" class="prof"> </form>
+                <h2>Update Profile</h>
+                <form>
+                        <p><label for="password">Password </label><input id="updatepasswd" type="password" name="password" placeholder="Maximum 8 characters" >
+                            
+                            <p><label for="email">E-mail </label><input id="updateemail" type="text" name="email" placeholder="Valid email address">
+                                <p><input id="updatebtn"  type="button" value="Update Profile">
+                                    <h6 id = updateMsn> </h6>
+                </form>
+                <h2>Delete Account</h>
+                <form>
+                <h6> You will lose all information if you delect account.</h6>
+                <p><input id="btndelete"  type="button" value="Sure to Delete Account?">
+                </form>
+            </div>
+            <div id="Allscores">
+                <h2>All Scores</h>
+                <div id="showScores" class="score"></div>
+            </div>
+            
+            <div id="login">
+                <h2>Please login</h>
+                    <form>
+                                <p><input id="loguser" type="text" name="user" placeholder="User Name" />
+                                <p><input id="logpw" type="password" name="password" placeholder="Password" />
+                                <p><input id="loginSubmit"  type="button" value="Login"/>
+                                    <input id="newuser" type="button" value ="Signup"/>
+                                <h6 id = "loginstatus"> </h6>
+                        </form>
+                    <h2>Top 10 High Scores</h>
+                        <div id=scores class="score"> </div>
+                    </div>
+            </div>
+            <div id="Signup">
+                <h2>Create account</h>
+                <form>
+                        <p><label for="user">User Name </label><input id="registeruser" type="text"  name="user" placeholder="No special characters">
+
+                        <p><label for="password">Password </label><input id="registerpasswd" type="password" name="password" placeholder="Maximum 8 characters" >
+                            
+                        <p><label for="email">E-mail </label><input id="registeremail" type="text" name="email" placeholder="Valid email address">
+                        <p><input id="signup" type="button" value="Submit"/><input id="sublogin"  type="button" value="Return to Login">
+                            <h6 id = registerMsn> </h6>
+                </form>
+            </div>
+            
+            <div id="Worlds">
+                <div class="mode">
+                    <a target="_blank" onclick=playGameSingle();>
+                        <img src="icons/level1.jpeg" alt="level1" width="300" height="300">
+                            </a>
+                    <div class="desc"><h8>Single Player Mode</h8></div>
+                </div>
+                <div id="single-root">
+                    <!-- <div class="mode">
+                    <a target="_blank" onclick=playGameSingle();>
+                        <img src="icons/level1.jpeg" alt="level1" width="300" height="300">
+                            </a>
+                    <div class="desc"><h8>Single Player Mode</h8></div>
+                </div> -->
+                </div>
+                <div class="mode">
+                    <a target="_blank" onclick=playGame();>
+                        <img src="icons/level2.jpg" alt="level2" width="300" height="300">
+                            </a>
+                    <div class="desc"><h8>MultiPlayer Mode</h8></div>
+                </div>
+            </div>
+            
+            <div id="wwgame">
+                <div id="left">
+                    <div>
+                        <h4>Score</h4> <div id="score"> </div>
+                    </div>
+                    
+                    <h4> All Users In Game</h4>
+                    <div id="AllUsers"> </div>
+                    
+                    <h3>Chat Box</h3>
+                    <div id="messages" style="border:1px solid black; width:100%; height:100px; overflow: auto;" ></div>
+                    <form>
+                        <input type="text" id="message" />
+                        <input id="sendMsg"  type="button" value="Send"/>
+                    </form>
+                    <h3>Draw Something</h3>
+                    <canvas style="border:1px solid black;" id="theCanvas" width="160" height="160" />
+                </div>
+                <div id="box">
+                     <td> <img src="icons/me.jpeg" id="Me" height=25 width=25/> </td>
+                     ~ Hello <h8 id="greeting" > </h8> ! ~
+                     <td> <img src="icons/me.jpeg" id="Me" height=25 width=25/> </td>
+                    <td> <div id="stage"> </div></td>
+                </div>
+                <div id="right">
+                    <div>
+                        <h4>Status</h4> <div id="status" style="color:red"> </div>
+                    </div>
+                    <div class="button" id="gameControl">
+                        <button class="button buttonPlay" id="btnPlay" type="submit" onclick="return rePlayGame();">Play Again</button>
+                        <button class="button buttonPlay" id="btnLogout" type="submit" onclick="return logout();">Logout</button>
+                    </div>
+                    <h4>Controls</h4>
+                    <table class="controls">
+                        <tr>
+                            <td><img id="nw" src="icons/north_west.svg" onclick=controlUser([-1,-1]); /></td>
+                            <td><img id="n" src="icons/north.svg" onclick=controlUser([0,-1]); /></td>
+                            <td><img id="ne" src="icons/north_east.svg" onclick=controlUser([1,-1]); /></td>
+                        </tr>
+                        <tr>
+                            <td><img id="w" src="icons/west.svg" onclick=controlUser([-1,0]); /></td>
+                            <td>&nbsp;</td>
+                            <td><img id="e" src="icons/east.svg" onclick=controlUser([1,0]); /></td>
+                        </tr>
+                        <tr>
+                            <td><img id="sw" src="icons/south_west.svg" onclick=controlUser([-1,1]); /></td>
+                            <td><img id="s" src="icons/south.svg" onclick=controlUser([0,1]); /></td>
+                            <td><img id="se" src="icons/south_east.svg" onclick=controlUser([1,1]); /></td>
+                        </tr>
+                    </table>
+                    <h4>Legend</h4>
+                    <table class="legend">
+                        <tr>
+                            
+                            <td> <img src="icons/face-cool-24.png" id="playerImage" /> </td>
+                            <td> <img src="icons/me.jpeg" id="Me" /> </td>
+                            <td> <img src="icons/devil.jpeg" id="devilImage" /> </td>
+                        </tr>
+                        <tr>
+                            <td> Player </td>
+                            <td> Me </td>
+                            <td> Devil </td>
+                        </tr>
+                        <tr>
+                            <td> <img src="icons/blank.gif" id="blankImage" /> </td>
+                            <td> <img src="icons/emblem-package-2-24.png" id="boxImage" /> </td>
+                            <td> <img src="icons/face-devil-grin-24.png" id="monsterImage" /> </td>
+                            <td> <img src="icons/wall.jpeg" id="wallImage" /> </td>
+                        </tr>
+                        <tr>
+                            <td> Empty <br/> Square </td>
+                            <td> Box </td>
+                            <td> Monster </td>
+                            <td> Wall </td>
+                        </tr>
+                    </table>
+                
+                </div>
+                
+            </div>
+            
+		</center>
 	</body>
-    <!-- <script type="text/babel" src="index.js" > </script> -->
+    <script language="javascript" src="jquery-3.3.1.min.js" > </script>
+    <script language="javascript" src="ww-single.js" > </script>
+    <!-- <script type="text/babel" src="ww-single.js" > </script> -->
+    <script language="javascript" src="wwClient.js" > </script>
 </html>
 
