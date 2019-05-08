@@ -58,9 +58,6 @@ function startGame() {
 function resetGame() {
   clearInterval(interval);
   interval = null;
-  //    stage=null;
-  //    username="";
-  //    password="";
   score = 0;
 }
 function playStatus() {
@@ -70,9 +67,7 @@ function playStatus() {
 function playGame() {
   initStage();
   mode = "multiPlayer";
-  //    console.log("playGame()");
   connectSocket();
-  //    connect = true;
   resetGame();
   startGame();
   $("#login").hide();
@@ -87,10 +82,7 @@ function playGame() {
 }
 
 function playGameSingle() {
-  //    console.log("playGame()");
   mode = "singlePlayer";
-  //    connectSocket();
-  //    connect = true;
   resetGame();
   startGame();
   $("#Worlds").hide();
@@ -99,10 +91,8 @@ function playGameSingle() {
   $("#wwgame").show();
   $("#left").hide();
   $("#profile").show();
-  //    console.log("gre:"+username);
   $("#greeting").html(username);
   status = "In Game";
-
   playStatus();
 }
 
@@ -118,7 +108,6 @@ function login() {
   $.ajax({
     method: "GET",
     url: "/ww/api/user/" + $("#loguser").val() + "/",
-    // data: {pw: $("#logpw").val()},
     headers: { authorization: encryption($("#loguser").val()) }
   }).done(function(data) {
     if ("error" in data) {
@@ -230,11 +219,6 @@ function insertNewScore() {
 
 function UserProfile() {
   insertNewScore();
-  //    socket.send(JSON.stringify({'type': "close",'userid': username}));
-  //    username="";
-  //    password="";
-  //    checklogin=false;
-  //    closeSocket();
 
   if (socket != null) {
     socket.send(JSON.stringify({ type: "close", userid: username }));
@@ -317,11 +301,7 @@ function updateLogintime() {
     method: "PUT",
     url: "/ww/api/loginuser",
     data: { _id: username }
-  }).done(function(data, text_status, jqXHR) {
-    //                   console.log(JSON.stringify(data));
-    //                   console.log(text_status);
-    //                   console.log(jqXHR.status);
-  });
+  }).done(function(data, text_status, jqXHR) {});
 }
 
 function highScore() {
@@ -361,7 +341,6 @@ function allhighScore() {
   $("#UserProfile").hide();
   $("#Allscores").show();
   $("#Worlds").hide();
-  //    $("#basic").hide();
   $.ajax({
     method: "GET",
     url: "/ww/api/allhighscore/"
@@ -470,26 +449,21 @@ function step() {
 }
 
 function send() {
-  //    console.log("send");
   socket.send(
     JSON.stringify({ type: "chat", userid: username, msg: $("#message").val() })
   );
-  //				socket.send($('#message').val());
   $("#message").val("");
 }
 
 function init() {
   $("#login").show();
   $("#Signup").hide();
-  //    $("#wwgame").hide();
   $("#wwgame").hide();
   $("#UserProfile").hide();
   $("#Allscores").hide();
   $("#profile").hide();
   $("#Worlds").hide();
-  //    $("#basic").hide();
   highScore();
-  //    playGame();
 }
 
 $(function() {
@@ -520,15 +494,6 @@ $(function() {
     allhighScore();
   });
   $("#main").on("click", function() {
-    //                if(socket !=null){
-    //                    socket.send(JSON.stringify({'type': "close",'userid': username}));
-    //                    closeSocket();
-    //                }
-    //                resetGame();
-    //                $("#Allscores").hide();
-    //                $("#UserProfile").hide();
-    //                $("#wwgame").hide();
-    //                $("#Worlds").show();
     mainPage();
   });
   $("#updatebtn").on("click", function() {
@@ -539,11 +504,6 @@ $(function() {
   });
   $("#btndelete").on("click", function() {
     deleteAccount();
-    //                     username="";
-    //                     clearInterval(interval);
-    //                     interval=null;
-    //                     score=0;
-    //                     init();
     if (socket != null) {
       socket.send(JSON.stringify({ type: "close", userid: username }));
       closeSocket();
@@ -590,7 +550,7 @@ function initStage() {
   s += "</table>";
   gameStage.innerHTML = s;
 }
-//initStage();
+
 keyBoardControl();
 
 function connectSocket() {
