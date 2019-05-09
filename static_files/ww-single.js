@@ -158,10 +158,6 @@ Stage.prototype.controlUser = function(pos) {
 
 // End Class Stage
 
-Stage.prototype.getPlayTime = function() {
-  return this.playedTime;
-};
-
 Stage.prototype.getStatus = function() {
   return this.status;
 };
@@ -189,7 +185,6 @@ Player.prototype.move = function(asker, x, y) {
     if (dest instanceof Monster) {
       this.stage.removeActor(this.stage.player);
       this.stage.player = null;
-      // player=null;
       return false;
     } else if (dest == null || dest.move(this, x, y)) {
       this.stage.removeActor(this);
@@ -272,9 +267,6 @@ Monster.prototype.move = function(asker, x, y) {
     this.stage.addActor(this);
 
     this.stage.setImage(this.x, this.y, this.stage.monsterImageSrc);
-    //        if(dest instanceof Player){
-    //
-    //        }
     return true;
   } else {
     return false;

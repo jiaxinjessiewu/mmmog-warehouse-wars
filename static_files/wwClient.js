@@ -31,10 +31,6 @@ function encryption(code) {
   return token;
 }
 
-function checkElement(id) {
-  return document.getElementById(id).innerHTML;
-}
-
 function clearIntervalForStage() {
   if (interval != null) {
     clearInterval(interval);
@@ -123,11 +119,9 @@ function login() {
         $("#loginstatus").html("OK And Click two more times:)");
         updateLogintime();
         mainPage();
-        // return true;
       } else {
         var loginstatus = "Invalid Login.To sign up if you are new player";
         $("#loginstatus").html(loginstatus);
-        // return false;
       }
     }
   });
@@ -170,12 +164,10 @@ function signup() {
         if (data["error"]) {
           console("signupError", data["error"]);
           $("#registerMsn").html(data["error"]);
-          // return false;
         } else {
           username = $("#registeruser").val();
           password = $("#registerpasswd").val();
           mainPage();
-          // return true;
           $("#registerMsn").html("OK And Click two more times:)");
         }
       })
@@ -289,7 +281,6 @@ function updateProfile() {
       }
     }).done(function(data, text_status, jqXHR) {
       if ("error" in data) {
-        // console.log(data)
       } else {
         UserProfile();
       }
@@ -309,15 +300,17 @@ function highScore() {
     method: "GET",
     url: "/ww/api/highscore/"
   }).done(function(data) {
-    var scores = "";
+    var scores =
+      "<table class='top-10-table'><tr><th>User Name</th><th>Scores</th></tr>";
     for (i = 0; i < data["highscore"].length; i++) {
       scores +=
         "<tr><td>" +
         data["highscore"][i].username +
-        ": </td><td> " +
+        "</td><td> " +
         data["highscore"][i].score +
         "</td></tr>";
     }
+    scores += "</table>";
     $("#scores").html(scores);
   });
 }

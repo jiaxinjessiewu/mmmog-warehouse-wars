@@ -215,9 +215,6 @@ app.put("/ww/api/updateuser", function(req, res) {
   var email = req.body.email;
   console.log("PUT:" + user);
 
-  // http://www.sqlitetutorial.net/sqlite-nodejs/update/
-  // let sql = 'UPDATE appuser SET password=?, email=? WHERE username=?;';
-
   appuser.find({ _id: user }).toArray(function(err, result) {
     if (err) {
       console.log(err.message);
@@ -359,8 +356,6 @@ app.post("/ww/api/newscore", function(req, res) {
             if (err) {
               console.log(err.message);
               res.status(422).send({ error: err.message });
-            } else if (result.length) {
-              res.json({ error: "record exists" });
             } else {
               scores.insert({ username: user, score: newscore }, function(
                 err,

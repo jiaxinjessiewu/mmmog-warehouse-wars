@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
-		<title>Computing Science 309 Warehouse Wars</title>
+		<title>Warehouse Wars Game</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script type="text/javascript"> var global = {}; </script>
         <script src="constants.js"> </script>
@@ -11,9 +11,8 @@
 	</head>
     
 	<body bgcolor="ffffff">
-        
 		<center>
-			<h1>Warehouse Wars</h1>
+			<h1>Warehouse Wars Game</h1>
             <div class="button" id="profile">
                 <button class="button buttonPlay" id="userProf" type="submit" onclick="return UserProfile();">User Profile</button>
                 <button class="button buttonPlay" id="scoreinfo" type="submit" onclick="return highScore();">All Scores</button>
@@ -45,17 +44,17 @@
             </div>
             
             <div id="login">
-                <h2>Please login</h>
-                    <form>
-                                <p><input id="loguser" type="text" name="user" placeholder="User Name" />
-                                <p><input id="logpw" type="password" name="password" placeholder="Password" />
-                                <p><input id="loginSubmit"  type="button" value="Login"/>
-                                    <input id="newuser" type="button" value ="Signup"/>
-                                <h6 id = "loginstatus"> </h6>
-                        </form>
-                    <h2>Top 10 High Scores</h>
-                        <div id=scores class="score"> </div>
-                    </div>
+                <h2>Please login</h2>
+                <form>
+                        <p><input id="loguser" type="text" name="user" placeholder="User Name" />
+                        <p><input id="logpw" type="password" name="password" placeholder="Password" />
+                        <p><input id="loginSubmit"  type="button" value="Login"/>
+                            <input id="newuser" type="button" value ="Signup"/>
+                        <h6 id = "loginstatus"> </h6>
+                </form>
+                <h2>Top 10 High Scores</h2>
+                <div id=scores class="score"> </div>
+                    
             </div>
             <div id="Signup">
                 <h2>Create account</h>
@@ -70,7 +69,7 @@
                 </form>
             </div>
             
-            <div id="Worlds">
+            <div id="Worlds" class="worlds">
                 <div class="mode">
                     <a target="_blank" onclick=playGameSingle();>
                         <img src="icons/level1.jpeg" alt="level1" width="300" height="300">
