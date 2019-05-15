@@ -8,6 +8,7 @@ password = "";
 status = "";
 connect = false;
 mode = "";
+showTop10 = false;
 
 window.onbeforeunload = function() {
   if (socket != null) {
@@ -448,6 +449,11 @@ function send() {
   $("#message").val("");
 }
 
+function showTop10Scores() {
+  console.log("show 10");
+  showTop10 = !showTop10;
+  showTop10 ? $("#scores").show() : $("#scores").hide();
+}
 function init() {
   $("#login").show();
   $("#Signup").hide();
@@ -456,6 +462,7 @@ function init() {
   $("#Allscores").hide();
   $("#profile").hide();
   $("#Worlds").hide();
+  $("#scores").hide();
   highScore();
 }
 

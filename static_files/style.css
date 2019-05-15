@@ -145,3 +145,6 @@ div.desc {
 .worlds {
   width: 50%;
 }
+a {
+  cursor: pointer;
+}
