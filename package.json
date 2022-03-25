@@ -27,7 +27,7 @@
     "redux": "^4.0.1",
     "sqlite3": "^4.0.6",
     "ws": "^6.2.1",
-    "minimist": ">=1.2.2"
+    "minimist": ">=1.2.6"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
