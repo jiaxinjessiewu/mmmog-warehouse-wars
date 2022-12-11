@@ -21,7 +21,7 @@
   "homepage": "https://github.com/jiaxinjessiewu/mmmog-warehouse-wars#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mongodb": "^3.2.3",
     "react-dom": "^16.8.6",
     "redux": "^4.0.1",
